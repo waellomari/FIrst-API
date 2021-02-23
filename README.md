@@ -1,6 +1,6 @@
 # FIrst-API
 
-first you need to use "Posrman" as a frontend.
+first you need to use "Postman" as a frontend. (https://www.postman.com/)
 then :
 - go to the link :https://computersgop.herokuapp.com/user/register to register.
 - go to the link :https://computersgop.herokuapp.com/user/login to login.
