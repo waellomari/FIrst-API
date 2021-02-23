@@ -3,9 +3,8 @@ const express = require('express')
 
 
 
-const { addUser, getUser } = require('./controllers/userControls')
-const { getProducts, getProduct, addProduct, } = require('./controllers/productControls')
-const { checkEmail, checkIfLoggedIn } = require('./middleware/validator');
+
+const { checkIfLoggedIn } = require('./middleware/validator');
 const userRouter = require('./routes/userRouts')
 const productsRouter = require('./routes/productsRoutes')
 
@@ -28,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
 
-app.use('/user', checkIfLoggedIn, userRouter)
+app.use('/user', userRouter)
 app.use('/products', checkIfLoggedIn, productsRouter)
 
 /* 
