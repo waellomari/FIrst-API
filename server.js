@@ -19,9 +19,7 @@ require('./lib/db');
 
 port = process.env.PORT || 80;
 
-app.listen(port, ()=> {
-    console.log(`server is connected , http://localhost:${port}`)
-});
+app.listen(port); 
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
