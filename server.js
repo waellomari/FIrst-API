@@ -17,7 +17,7 @@ const app = express();
 const {isEmail} = require('validator');
 require('./lib/db');
 
-port = process.env.PORT || 3000;
+port = process.env.PORT || 80;
 
 app.listen(port, ()=> {
     console.log(`server is connected , http://localhost:${port}`)
