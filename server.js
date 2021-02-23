@@ -26,26 +26,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
 
-app.use('/user', checkIfLoggedIn, userRouter)
-app.use('/products', checkIfLoggedIn, productsRouter)
-
-/* 
-mongoose.connect(process.env.MONGODB_URI, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-})
-.then((result)=> app.listen(port, ()=> {
-    console.log(`server and database connected, http://localhost:${port}`)
-}))
-.catch((error)=> {
-    console.log(error);
-    process.exit(1);
-});
-
- */
-
-//const user = mongoose.connection.model('users', userSchema);
-
-
-
+app.use('/user', checkIfLoggedIn, userRouter);
+app.use('/products', checkIfLoggedIn, productsRouter);
