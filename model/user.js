@@ -9,8 +9,8 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
+        unique: false,
     },
     password: {
         type: String,
@@ -35,7 +35,7 @@ userSchema.pre('save', async function (next) {
  
 const User = mongoose.connection.model('users', userSchema);
 
-// email checker midellware
+// email checker middleware
 /* 
 function checkIfEmail(req,res,next){
 

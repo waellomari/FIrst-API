@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express')
-
+const cors = require('cors');
 
 
 
@@ -12,6 +12,8 @@ const cookieParser = require('cookie-parser')
 
 
 const app = express();
+
+app.use(cors());
 
 const {isEmail} = require('validator');
 require('./lib/db');
@@ -29,7 +31,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.status(200).send('This is homepage'))
 app.use('/user', userRouter)
-app.use('/products', checkIfLoggedIn, productsRouter)
+//app.use('/products', checkIfLoggedIn, productsRouter)
+app.use('/products', productsRouter)
 
 /* 
 mongoose.connect(process.env.MONGODB_URI, {
